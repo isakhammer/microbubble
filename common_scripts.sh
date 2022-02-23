@@ -25,6 +25,7 @@ export EDITOR="nvim"
 # }
 # alias pp1="cat ~/.cache/ppa/pp1 && bash ~/.cache/ppa/pp1"
 
+
 # vi mode
 set -o vi
 export KEYTIMEOUT=1
