@@ -66,7 +66,8 @@ RUN apt-get install -yq openmpi-bin openmpi-common libopenmpi-dev
 RUN apt-get install -yq libblas3 libblas-dev liblapack3 liblapack-dev libsuitesparse-dev
 
 WORKDIR $HOME_DIR
-RUN git clone --branch master https://github.com/dealii/candi.git
+#RUN git clone --branch master https://github.com/dealii/candi.git
+RUN git clone --branch master https://github.com/isakhammer/candi.git
 
 WORKDIR $HOME_DIR/candi
 RUN . candi.sh -y -j8
