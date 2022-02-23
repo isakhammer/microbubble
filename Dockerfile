@@ -50,17 +50,13 @@ RUN /usr/bin/python3.8 -m pip install --upgrade pip
 RUN pip3 install --upgrade pip
 RUN apt-get update
 
-
-
 RUN mkdir -p $HOME_DIR/code
 ENV WORK_DIR $HOME_DIR/code
 WORKDIR $WORK_DIR
-
 COPY . .
 
 #RUN pip3 install -r $WORK_DIR/requirements.txt
 RUN echo "source ${WORK_DIR}/common_scripts.sh" >> /root/.bashrc
-
 
 # CANDI DEPENDENCIES
 RUN apt-get install -yq lsb-release git subversion wget bc libgmp-dev
@@ -70,8 +66,12 @@ RUN apt-get install -yq openmpi-bin openmpi-common libopenmpi-dev
 RUN apt-get install -yq libblas3 libblas-dev liblapack3 liblapack-dev libsuitesparse-dev
 
 WORKDIR $HOME_DIR
-RUN git clone https://github.com/dealii/candi.git
+#RUN git clone https://github.com/dealii/candi.git
+RUN git clone https://github.com/isakhammer/candi.git
 WORKDIR $HOME_DIR/candi
 RUN . candi.sh -j8
+RUN echo "source /root/dealii-candi/configuration/enable.sh" >> /root/.bashrc
+
+WORKDIR $WORK_DIR
 
 CMD ["bash"]
