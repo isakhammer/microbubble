@@ -7,7 +7,7 @@ function run_container()  {
      -e DISPLAY=$DISPLAY \
      --name microbubble \
      --privileged \
-     -v $(pwd)/:/home/dealii/src \
+     -v $(pwd)/:/home/dealii/code \
      -v $XSOCK:$XSOCK \
      -v $HOME/.ssh:/home/dealii/.ssh \
      -v $HOME/.Xauthority:/home/dealii/.Xauthority \
@@ -15,7 +15,8 @@ function run_container()  {
 }
 
 function run_container2()  {
-  image_name="custom_dealii:latest"
+  # image_name="custom_dealii:latest"
+  image_name="dealii/dealii:master-focal-root"
   xhost +local:root
   XSOCK=/tmp/.X11-unix
   docker run -it --rm \
