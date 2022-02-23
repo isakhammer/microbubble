@@ -69,7 +69,7 @@ WORKDIR $HOME_DIR
 RUN git clone --branch master https://github.com/dealii/candi.git
 
 WORKDIR $HOME_DIR/candi
-RUN . candi.sh -j8
+RUN . candi.sh -y -j8
 RUN echo "source /root/dealii-candi/configuration/enable.sh" >> /root/.bashrc
 
 WORKDIR $WORK_DIR
