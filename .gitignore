@@ -1,5 +1,6 @@
 
 # Build
+tags
 build/*
 cmake-build-debug
 
