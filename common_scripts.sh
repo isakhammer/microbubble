@@ -1,4 +1,5 @@
 alias p3='python3.8'
+alias python='python3.8'
 #shopt
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings
