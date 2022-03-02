@@ -1,6 +1,6 @@
 
 function build_container()  {
-  image_name="custom_dealii_v2:latest"
+  image_name="dealii_micro:latest"
   docker build . -t $image_name
 }
 
